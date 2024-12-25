@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class DropDownListLesson {
     public static void main(String[] args) throws InterruptedException {
 
@@ -23,9 +25,18 @@ public class DropDownListLesson {
         Select select = new Select(options);
         Thread.sleep(2000);
         //providing value to select
-        select.selectByVisibleText("Bangladesh");
-        Thread.sleep(2000);
+//        select.selectByVisibleText("Bangladesh");
+//        Thread.sleep(2000);
+        List<WebElement> availableOptions = select.getOptions();
 
+        for(WebElement option : availableOptions){
+            System.out.println(option.getText());
+            if(option.getText().equalsIgnoreCase("Bangladesh")){
+                option.click();
+            }
+            //Thread.sleep(2000);
+        }
 
+        driver.quit();
     }
 }
