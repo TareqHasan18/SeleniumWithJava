@@ -22,6 +22,31 @@
             <version>4.27.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.9.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/htmlunit3-driver -->
+        <!--
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>htmlunit3-driver</artifactId>
+            <version>4.27.0</version>
+        </dependency>
+        -->
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-http-jdk-client -->
+        <!--
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-http-jdk-client</artifactId>
+            <version>4.13.0</version>
+        </dependency>
+        -->
+
     </dependencies>
 
 </project>
