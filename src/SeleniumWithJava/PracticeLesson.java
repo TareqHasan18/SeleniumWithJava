@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class PracticeLesson {
@@ -13,7 +14,7 @@ public class PracticeLesson {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.get("https://practice.automationtesting.in/shop/");
+        driver.get("https://demo.automationtesting.in/Frames.html");
 
 //        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -86,11 +87,30 @@ public class PracticeLesson {
 //        alert.dismiss();
 //        Thread.sleep(2000);*/
         //driver.findElement(By.linkText("Home")).click();
-        new WebDriverWait(driver, Duration.ofSeconds(20)).ignoring(StaleElementReferenceException.class)
-               .until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[1]/a[1]/h3"))))
-                .click();
-        System.out.println(driver.getTitle());
-        Thread.sleep(2000);
+//        new WebDriverWait(driver, Duration.ofSeconds(20)).ignoring(StaleElementReferenceException.class)
+//               .until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[1]/a[1]/h3"))))
+//                .click();
+//        System.out.println(driver.getTitle());
+//        Thread.sleep(2000);
+
+//        WebElement iframe = driver.findElement(By.className("demo-frame"));
+//        driver.switchTo().frame(iframe);
+
+//        driver.switchTo().frame(0);
+//
+//        Actions actions = new Actions(driver);
+//        actions.clickAndHold(driver.findElement(By.id("draggable")))
+//                .moveToElement(driver.findElement(By.id("droppable")))
+//                .release().build().perform();
+//        Thread.sleep(5000);
+
+        List<WebElement> youFrames = driver.findElements(By.tagName("iframe"));
+        System.out.println("Total number of iframes are: " + youFrames.size());
+
+        for(WebElement youFrame : youFrames){
+            String source = youFrame.getDomAttribute("src");
+            System.out.println("The url of the iframe is: " + source);
+        }
 
         driver.quit();
     }
