@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -64,7 +65,7 @@ public class WritingXPATHConcept {
         ////a[@href='#cmp-modal~ccdes2' and @class ='tooltip-bottom-border' ]
         //driver.findElement(By.xpath("//a[@href='#cmp-modal~ccdes2' and @class ='tooltip-bottom-border' ]")).click();
         //driver.findElement(By.xpath("//a[@href='https://www.citi.com/banking/bank-accounts?intc=citihpmenu_overview_bank-accounts' and @class='main-links plusIcon blueCustomerBtns blueAccPadding ng-star-inserted']")).click();
-        driver.findElement(By.id("@id='navOpenAccmainAnchor8")).click();
+        //driver.findElement(By.id("@id='navOpenAccmainAnchor8")).click();
         //href="https://www.citi.com/banking/bank-accounts?intc=citihpmenu_overview_bank-accounts"
         //Thread.sleep(2000);
 
@@ -73,6 +74,7 @@ public class WritingXPATHConcept {
         ////a[@class='cmp-primary-header__menu-link']//parent::li[@class='cmp-primary-header__menu-item ']
         ////a[text()='Commercial']//parent::li[@class='cmp-link']//preceding-sibling::li[@class='cmp-link']
         //driver.findElement(By.xpath("//a[@class='cmp-primary-header__menu-link']//parent::li[@class='cmp-primary-header__menu-item ']")).click();
+        System.out.println(driver.findElement(By.xpath("//p[@class='heading-title ng-star-inserted']")).getText());
         Thread.sleep(2000);
 
 
